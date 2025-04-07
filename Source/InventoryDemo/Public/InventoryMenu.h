@@ -7,6 +7,7 @@
 #include "InventoryMenu.generated.h"
 
 class UUniformGridPanel;
+class UInventoryItemWidget;
 
 USTRUCT(BlueprintType)
 struct FInventoryItemData
@@ -18,6 +19,9 @@ struct FInventoryItemData
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	FString Description;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+	TObjectPtr<UTexture2D> Icon;
 };
 
 /**
@@ -31,7 +35,7 @@ class INVENTORYDEMO_API UInventoryMenu : public UCommonActivatableWidget
 public:
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite)
-	TSubclassOf<UCommonActivatableWidget> ItemWidget;
+	TSubclassOf<UInventoryItemWidget> ItemWidget;
 
 	UFUNCTION(BlueprintCallable)
 	void Populate(TArray<FInventoryItemData> items);

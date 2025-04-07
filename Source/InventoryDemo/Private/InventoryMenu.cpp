@@ -2,6 +2,7 @@
 
 
 #include "InventoryMenu.h"
+#include "InventoryItemWidget.h"
 #include "Components/UniformGridPanel.h"
 
 void UInventoryMenu::Populate(TArray<FInventoryItemData> items)
@@ -24,7 +25,8 @@ void UInventoryMenu::AddSingleItem(FInventoryItemData item)
 
 void UInventoryMenu::SpawnItemCell(FInventoryItemData data, int itemIndex)
 {
-	UUserWidget* item = CreateWidget(GetOwningPlayer(), ItemWidget, FName(data.Name + "__Item"));
+	UInventoryItemWidget* item = CreateWidget<UInventoryItemWidget>(GetOwningPlayer(), ItemWidget, FName(data.Name + "__Item"));
 	item->SetToolTipText(FText::FromString(data.Name));
+	item->SetImage(data.Icon);
 	GridView_Items->AddChildToUniformGrid(item, itemIndex / NUMBER_OF_COLUMNS, itemIndex % NUMBER_OF_COLUMNS);
 }
