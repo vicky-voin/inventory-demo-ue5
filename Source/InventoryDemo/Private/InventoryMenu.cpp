@@ -25,5 +25,6 @@ void UInventoryMenu::AddSingleItem(FInventoryItemData item)
 void UInventoryMenu::SpawnItemCell(FInventoryItemData data, int itemIndex)
 {
 	UUserWidget* item = CreateWidget(GetOwningPlayer(), ItemWidget, FName(data.Name + "__Item"));
+	item->SetToolTipText(FText::FromString(data.Name));
 	GridView_Items->AddChildToUniformGrid(item, itemIndex / NUMBER_OF_COLUMNS, itemIndex % NUMBER_OF_COLUMNS);
 }
