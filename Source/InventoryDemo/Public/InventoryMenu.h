@@ -38,10 +38,7 @@ public:
 	TSubclassOf<UInventoryItemWidget> ItemWidget;
 
 	UFUNCTION(BlueprintCallable)
-	void Populate(TArray<FInventoryItemData> items);
-
-	UFUNCTION(BlueprintCallable)
-	void AddSingleItem(FInventoryItemData item);
+	void AddItems(TArray<FInventoryItemData> items);
 
 private:
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget, BlueprintProtected = true, AllowPrivateAccess = true))

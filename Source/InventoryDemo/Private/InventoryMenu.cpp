@@ -5,22 +5,16 @@
 #include "InventoryItemWidget.h"
 #include "Components/UniformGridPanel.h"
 
-void UInventoryMenu::Populate(TArray<FInventoryItemData> items)
+void UInventoryMenu::AddItems(TArray<FInventoryItemData> items)
 {
-	int gridIndex = 0;
+	int lastItemIndex = GridView_Items->GetChildrenCount();
 
 	for (auto& Item : items)
 	{
-		SpawnItemCell(Item, gridIndex);
+		SpawnItemCell(Item, lastItemIndex);
 
-		gridIndex++;
+		lastItemIndex++;
 	}
-}
-
-void UInventoryMenu::AddSingleItem(FInventoryItemData item)
-{
-	int lastItemIndex = GridView_Items->GetChildrenCount();
-	SpawnItemCell(item, lastItemIndex++);
 }
 
 void UInventoryMenu::SpawnItemCell(FInventoryItemData data, int itemIndex)
