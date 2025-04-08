@@ -8,17 +8,17 @@ The project works with both keyboard and mouse and the Xbox One controller. (Oth
 
 An input legend is always displayed at the bottom of the screen, showcasing possible allowed inputs.
 
-[](img/screencapture1.gif)
+![](img/screencapture1.gif)
 
 Items implementing a Pickupable interface can be picked up and added to the inventory.
 
-[](img/screencapture2.gif)
+![](img/screencapture2.gif)
 
 Inventory menu can be toggled on and off and will display picked up items, as well as the initial inventory. Hovering over an item will display its name in a tooltip.
 
 The UI can seamlessly switch between keyboard/mouse or controller inputs.
 
-[](img/screencapture3.gif)
+![](img/screencapture3.gif)
 
 ## Known issues and TODOs
 
